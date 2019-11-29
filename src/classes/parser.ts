@@ -15,7 +15,7 @@ class MarkdownDocument implements IMarkdownDocument {
 export class ParseElement {
     currentLine: string = "";
 }
-export class TagTypeToHTML {
+export class TagTypeToHtml {
     private readonly tagType: Map<TagType, string> = new Map<TagType, string>();
     constructor(){
         Object.keys(TagType).map(k => {
@@ -37,4 +37,4 @@ export class TagTypeToHTML {
     }
 }
 
-export const t = new TagTypeToHTML()
+export const t = new TagTypeToHtml()
