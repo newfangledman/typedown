@@ -1,11 +1,17 @@
 import { TagType } from "./types";
 import { TagTypeToHtml, ParseElement } from "./parser";
-import { IMarkdownDocument } from "./types/interfaces";
+import { IMarkdownDocument, IMarkdownVisitor, IMarkdownVisitable } from "./types/interfaces";
 
 abstract class MarkdownVisitorBase {
     constructor(private readonly tagType: TagType, private readonly tagTypeToHtml: TagTypeToHtml){}
     visit(token: ParseElement, markdownDocument: IMarkdownDocument): void {
         markdownDocument.add(this.tagTypeToHtml.openingTag(this.tagType), token.currentLine, this.tagTypeToHtml.closingTag(this.tagType))
+    }
+}
+
+class MarkdownVisitable implements IMarkdownVisitable {
+    accept(visitor: IMarkdownVisitor, token: ParseElement, markdownDocument: IMarkdownDocument): void{
+        visitor.visit(token, markdownDocument)
     }
 }
 

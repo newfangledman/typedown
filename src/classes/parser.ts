@@ -1,7 +1,7 @@
 import { TagType } from "./types";
 import { IMarkdownDocument } from "./types/interfaces";
 
-class MarkdownDocument implements IMarkdownDocument {
+export class MarkdownDocument implements IMarkdownDocument {
     private content: string = "";
     add(...content : string[]){
         content.forEach(element => {
