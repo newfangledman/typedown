@@ -1,7 +1,3 @@
-const world = 'WORLD';
+import {HtmlHandler} from "./classes/handlers"
 
-export function hello(word: string = world): string {
-  return `Hello ${world}!`;
-}
-
-console.log(hello())
+new HtmlHandler().textChangeHandler()
