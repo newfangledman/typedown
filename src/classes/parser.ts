@@ -11,7 +11,9 @@ class MarkdownDocument implements IMarkdownDocument {
     get(): string {
         return this.content
     }
-    
+}
+export class ParseElement {
+    currentLine: string = "";
 }
 export class TagTypeToHTML {
     private readonly tagType: Map<TagType, string> = new Map<TagType, string>();
