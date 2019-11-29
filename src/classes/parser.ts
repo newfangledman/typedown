@@ -1,5 +1,18 @@
 import { TagType } from "./types";
+import { IMarkdownDocument } from "./types/interfaces";
 
+class MarkdownDocument implements IMarkdownDocument {
+    private content: string = "";
+    add(...content : string[]){
+        content.forEach(element => {
+            this.content += element;
+        })
+    }
+    get(): string {
+        return this.content
+    }
+    
+}
 export class TagTypeToHTML {
     private readonly tagType: Map<TagType, string> = new Map<TagType, string>();
     constructor(){
