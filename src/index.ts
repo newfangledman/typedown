@@ -1,3 +1,2 @@
-import {HtmlHandler} from "./classes/handlers"
-
+import { HtmlHandler } from "./classes/handlers"
 new HtmlHandler().textChangeHandler()

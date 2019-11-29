@@ -4,14 +4,18 @@
   "description": "Markdown preview made with TypeScript",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc",
-    "dev": "npx tsc -w",
+    "build": "npx webpack --mode production",
+    "dev": "npx webpack --watch --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^3.7.2"
+    "html-webpack-plugin": "^3.2.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   }
 }
