@@ -9,7 +9,7 @@ abstract class MarkdownVisitorBase {
     }
 }
 
-class MarkdownVisitable implements IMarkdownVisitable {
+export class MarkdownVisitable implements IMarkdownVisitable {
     accept(visitor: IMarkdownVisitor, token: ParseElement, markdownDocument: IMarkdownDocument): void{
         visitor.visit(token, markdownDocument)
     }
